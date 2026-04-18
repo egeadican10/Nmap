@@ -2,6 +2,8 @@ log
 Failed password for admin from 192.168.1.10
 Accepted password for admin from 192.168.1.10
 
+
+
 Multiple failed login attempts were detected from the same IP address, followed by a successful login.
 This indicates a brute force attack leading to account compromise.
 
