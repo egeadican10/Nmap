@@ -18,6 +18,8 @@ This project simulates a brute force attack against a system and analyzes authen
 -Failed password for admin from 192.168.1.10 port 22 ssh2
 -Failed password for admin from 192.168.1.10 port 22 ssh2
 -Accepted password for admin from 192.168.1.10 port 22 ssh2
+
+
 ## Analysis
 Multiple failed login attempts followed by a successful login indicate a brute force attack.  
 This suggests that the attacker successfully guessed the correct password.
