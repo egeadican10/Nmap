@@ -1,25 +1,46 @@
-log
-Failed password for admin from 192.168.1.10
-Accepted password for admin from 192.168.1.10
+# Brute Force Attack Detection Project
 
+## Description
+This project simulates a brute force attack against a system and analyzes authentication logs to detect malicious activity.
 
+## Environment
+- Attacker: Kali Linux
+- Target: Ubuntu (SSH enabled)
+- Attack Tool: Hydra
 
-Multiple failed login attempts were detected from the same IP address, followed by a successful login.
-This indicates a brute force attack leading to account compromise.
+## Attack Scenario
+- Multiple login attempts targeting the admin account
+- Repeated failed login attempts
+- Successful login after multiple failures
 
-IF failed_login > 5 AND success_login
+## Sample Log 
+Failed password for admin from 192.168.1.10 port 22 ssh2
+Failed password for admin from 192.168.1.10 port 22 ssh2
+Failed password for admin from 192.168.1.10 port 22 ssh2
+Accepted password for admin from 192.168.1.10 port 22 ssh2
+## Analysis
+Multiple failed login attempts followed by a successful login indicate a brute force attack.  
+This suggests that the attacker successfully guessed the correct password.
+
+## Detection Logic
+IF failed_login > 3 AND success_login  
 THEN brute_force_attack
 
-Incident Type: Brute Force Attack
+## Incident Report
+- Incident Type: Brute Force Attack
+- Target: SSH (admin account)
+- Findings:
+  - Repeated failed login attempts
+  - Successful login after failures
+- Risk Level: High
 
-Target: SSH (admin user)
+## Recommendations
+- Enable account lockout policy
+- Implement multi-factor authentication (MFA)
+- Monitor login attempts and IP behavior
 
-Findings:
-- Multiple failed login attempts
-- Successful login after failures
-
-Risk: High
-
-Recommendation:
-- Enable account lockout
-- Use MFA
+## Skills Gained
+- Log Analysis
+- Attack Detection
+- Incident Response
+- Cybersecurity Fundamentals
